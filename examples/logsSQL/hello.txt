@@ -1,0 +1,2 @@
+ [WARN ][2017/05/10 00:00:01   ][com.cecdata.exchange.util.Log.log(Log.java:26)]UPLOAD SUCC ---ONE FILE=E:\PACS\福州市第六医院\image1\image\CT\20141231\C15441_1.3.12.2.1107.5.1.4.80579.30000014123100122885900000029\0003_000002_1.3.12.2.1107.5.1.4.80579.30000014123023585342100000745, FID=54,52efb76fb2c0b5
+[WARN ][2017/05/11 01:06:41   ][com.cecdata.exchange.util.Log.log(Log.java:26)]UPLOAD SUCC ---ONE FILE=E:\PACS\福州市第六医院\image1\_desktop.ini, FID=54,52efb76fb2c0b1

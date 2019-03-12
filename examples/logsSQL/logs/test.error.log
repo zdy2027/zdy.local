@@ -1,0 +1,6 @@
+2017/05/20 10:28:18 [E] error test
+2017/05/20 10:33:43 [E] error test
+2017/05/20 10:34:42 [E] [testing.go:657] error test
+2017/05/20 10:35:26 [E] [asm_amd64.s:2197] error test
+2017/05/20 10:35:37 [E] [logs_test.go:13] error test
+2017/05/20 10:42:19 [E] [logs_test.go:13] error test

@@ -1,0 +1,6 @@
+2017/05/20 10:28:18 [A] alert test
+2017/05/20 10:33:43 [A] alert test
+2017/05/20 10:34:42 [A] [testing.go:657] alert test
+2017/05/20 10:35:26 [A] [asm_amd64.s:2197] alert test
+2017/05/20 10:35:37 [A] [logs_test.go:14] alert test
+2017/05/20 10:42:19 [A] [logs_test.go:14] alert test

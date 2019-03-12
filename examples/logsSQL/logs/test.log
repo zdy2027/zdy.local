@@ -1,0 +1,49 @@
+2017/05/20 10:28:18 [I] info test
+2017/05/20 10:28:18 [E] error test
+2017/05/20 10:28:18 [A] alert test
+2017/05/20 10:28:18 [D] debug test
+2017/05/20 10:28:18 [C] critical test
+2017/05/20 10:28:18 [M] emergency test
+2017/05/20 10:28:18 [D] trace test
+2017/05/20 10:28:18 [W] warn test
+2017/05/20 10:28:18 [N] notice test
+2017/05/20 10:28:18 [I] information test
+2017/05/20 10:28:18 [W] warning test
+2017/05/20 10:33:43 [I] info test
+2017/05/20 10:33:43 [E] error test
+2017/05/20 10:33:43 [A] alert test
+2017/05/20 10:33:43 [D] debug test
+2017/05/20 10:33:43 [C] critical test
+2017/05/20 10:33:43 [M] emergency test
+2017/05/20 10:33:43 [N] notice test
+2017/05/20 10:33:43 [W] warning test
+2017/05/20 10:34:42 [I] [testing.go:657] info test
+2017/05/20 10:34:42 [E] [testing.go:657] error test
+2017/05/20 10:34:42 [A] [testing.go:657] alert test
+2017/05/20 10:34:42 [D] [testing.go:657] debug test
+2017/05/20 10:34:42 [C] [testing.go:657] critical test
+2017/05/20 10:34:42 [M] [testing.go:657] emergency test
+2017/05/20 10:34:42 [N] [testing.go:657] notice test
+2017/05/20 10:34:42 [W] [testing.go:657] warning test
+2017/05/20 10:35:26 [I] [asm_amd64.s:2197] info test
+2017/05/20 10:35:26 [E] [asm_amd64.s:2197] error test
+2017/05/20 10:35:26 [A] [asm_amd64.s:2197] alert test
+2017/05/20 10:35:26 [D] [asm_amd64.s:2197] debug test
+2017/05/20 10:35:26 [C] [asm_amd64.s:2197] critical test
+2017/05/20 10:35:26 [M] [asm_amd64.s:2197] emergency test
+2017/05/20 10:35:26 [N] [asm_amd64.s:2197] notice test
+2017/05/20 10:35:26 [W] [asm_amd64.s:2197] warning test
+2017/05/20 10:35:37 [I] [logs_test.go:12] info test
+2017/05/20 10:35:37 [E] [logs_test.go:13] error test
+2017/05/20 10:35:37 [A] [logs_test.go:14] alert test
+2017/05/20 10:35:37 [D] [logs_test.go:15] debug test
+2017/05/20 10:35:37 [C] [logs_test.go:16] critical test
+2017/05/20 10:35:37 [M] [logs_test.go:17] emergency test
+2017/05/20 10:35:37 [N] [logs_test.go:20] notice test
+2017/05/20 10:35:37 [W] [logs_test.go:22] warning test
+2017/05/20 10:42:19 [I] [logs_test.go:12] info test
+2017/05/20 10:42:19 [E] [logs_test.go:13] error test
+2017/05/20 10:42:19 [A] [logs_test.go:14] alert test
+2017/05/20 10:42:19 [D] [logs_test.go:15] debug test
+2017/05/20 10:42:19 [C] [logs_test.go:16] critical test
+2017/05/20 10:42:19 [M] [logs_test.go:17] emergency test

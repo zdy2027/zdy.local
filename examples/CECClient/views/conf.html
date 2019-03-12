@@ -1,0 +1,150 @@
+
+<section class="container" id="main">
+
+<!-- Start Survey container -->
+<div id="survey_container">
+
+	<div id="top-wizard">
+		<strong>Progress <span id="location"></span></strong>
+		<div id="progressbar"></div>
+		<div class="shadow"></div>
+	</div><!-- end top-wizard -->
+    
+	<form name="survey_container" action="" method="POST">
+	<div id="middle-wizard">
+    
+    <div class="step">
+				<div class="row">
+					<h3 class="col-md-10">输入上传pacs配置信息</h3></h3>
+					<div class="col-md-6">
+						<ul class="data-list">
+							<li><input type="text" name="upload" class="required form-control" placeholder="输入上传路径；多个路径以分号做隔离"></li>
+							<li><input type="text" name="preupload" class="required form-control" placeholder="输入上传路径前置路径；多个路径以分号做隔离"></li>
+							<li><input type="text" name="server" class="required form-control" placeholder="上传服务器IP地址"></li>
+                            <input id="website" name="website" type="text" value="" ><!-- Leave for security protection, read docs for details -->
+						</ul>
+					</div><!-- end col-md-6 -->
+                    
+					<div class="col-md-6">
+                    
+						<ul class="data-list">
+							<li>
+							<div class="styled-select">
+								<select class="form-control required" name="os">
+									<option value="" selected>选择执行系统</option>
+									<option value="win">windows</option>
+									<option value="linux">linux</option>
+								</select>
+							</div>
+							</li>
+						</ul>
+                        
+						<ul class="data-list">
+							<li>
+							<div class="qty-buttons">
+								<input type="button" value="+" class="qtyplus" name="quantity">
+								<input type="text" name="lastmodify" value="" class="qty form-control required" placeholder="0">
+								<input type="button" value="-" class="qtyminus" name="quantity"><span>lastmodify time</span>
+							</div>
+							</li>
+						</ul>
+                        
+						<ul class="data-list floated clearfix">
+							<li id="port"><input type="text" name="port" class="required form-control" placeholder="上传端口"></li>
+						
+						</ul>
+                        
+					</div><!-- end col-md-6 -->
+				</div><!-- end row -->
+                
+				
+                
+			</div><!-- end step-->
+            
+				<div class="step row" data-state="branchtype">
+						<div class="col-md-10">
+                        <h3>选择配置策略</h3>
+                        <ul class="data-list-2" >
+						<li><input type="radio" name="branchtype" value="custom" id="Custom" class="check_radio" /><label>自定义上传周期以及更新策略</label></li>
+						<li><input type="radio" name="branchtype" value="default" id="Default" class="check_radio" /><label>默认上传周期以及更新策略</label></li>
+                        </ul>
+				</div>
+					</div><!-- end step -->
+
+					<div class="branch" id="default">
+						<div class="step row" data-state="end">
+							<div class="col-md-10">
+                                <ul class="data-list"  id="terms">
+                                    <li>
+                            <strong>你确定接受 <a href="#" data-toggle="modal" data-target="#terms-txt">默认配置策略</a> ?</strong>
+              <label class="switch-light switch-ios ">
+                                    <input type="checkbox" name="terms" class="required fix_ie8" value="yes">
+                                    <span>
+                                        <span class="ie8_hide">No</span>
+                                        <span>Yes</span>
+                                    </span>
+                                    <a></a>
+                                </label>
+                                    </li>
+                                </ul>
+                            </div>
+						</div>
+					</div><!-- end step -->
+
+					<div class="branch" id="custom">
+						<div class="step row" data-state="end">
+							<div class="col-md-10">
+                                <h3>自定义策略配置</h3>
+                                <ul class="data-list-2">
+                                    <li>
+                                      <div class="styled-select">
+                                        <select class="form-control required" name="update_cycle">
+                                          <option value="Sunday" selected>选择定时更新时间</option>
+                                          <option value="Sunday">周日</option>
+                                          <option value="Monday">周一</option>
+                                          <option value="Tuesday">周二</option>
+                                          <option value="Wednesday">周三</option>
+                                          <option value="Thursday">周四</option>
+                                          <option value="Friday">周五</option>
+                                          <option value="Saturday">周六</option>
+                                        </select>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div class="styled-select">
+                                        <select class="form-control required" name="upload_cycle">
+                                          <option value="Sunday" selected>选择定时上传时间</option>
+                                          <option value="Sunday">周日</option>
+                                          <option value="Monday">周一</option>
+                                          <option value="Tuesday">周二</option>
+                                          <option value="Wednesday">周三</option>
+                                          <option value="Thursday">周四</option>
+                                          <option value="Friday">周五</option>
+                                          <option value="Saturday">周六</option>
+                                        </select>
+                                      </div>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+						</div>
+					</div><!-- end step -->
+                    
+                    <div class="submit step" id="end">
+                    	
+						<h3>配置完成！开始执行增量上传。</h3>
+						<a ><input type="button" class="btn btn-lg btn-info" value="start run" onclick="uploadConf()"></input></a>
+						
+					</div><!-- end submit step -->
+                    
+                    </div><!-- end middle-wizard -->
+
+                    <div id="bottom-wizard">
+                        <button type="button" name="backward" class="backward">Backward</button>
+                        <button type="button" name="forward" class="forward">Forward </button>
+                    </div><!-- end bottom-wizard -->
+	</form>
+    
+</div><!-- end Survey container -->
+</section><!-- end section main container -->
+<script type="text/javascript" src="/static/js/getMessage/submit.js"></script>

@@ -1,0 +1,28 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;UploadFiles&gt;">
+    <CLASSES>
+      <root url="file://$USER_HOME$/go/src/dicom" />
+      <root url="file://$USER_HOME$/go/src/bapi" />
+      <root url="file://$USER_HOME$/go/src/zdy.local" />
+      <root url="file://$USER_HOME$/go/src/github.com" />
+      <root url="file://$USER_HOME$/go/src/godcmviewer" />
+      <root url="file://$USER_HOME$/go/src/golang.org" />
+      <root url="file://$USER_HOME$/go/src/bazil.org" />
+      <root url="file://$USER_HOME$/go/src/gopkg.in" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/go/src/dicom" />
+      <root url="file://$USER_HOME$/go/src/bapi" />
+      <root url="file://$USER_HOME$/go/src/zdy.local" />
+      <root url="file://$USER_HOME$/go/src/github.com" />
+      <root url="file://$USER_HOME$/go/src/godcmviewer" />
+      <root url="file://$USER_HOME$/go/src/golang.org" />
+      <root url="file://$USER_HOME$/go/src/bazil.org" />
+      <root url="file://$USER_HOME$/go/src/gopkg.in" />
+    </SOURCES>
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>

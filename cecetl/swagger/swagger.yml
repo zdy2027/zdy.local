@@ -1,0 +1,855 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /autosql/AutoImage:
+    post:
+      tags:
+      - autosql
+      description: 根据json字段自动生成对表sql语句
+      operationId: AutoSqlController.Auto sql image
+      parameters:
+      - in: body
+        name: body
+        description: 每个字段对应的字段名以及来源信息
+        required: true
+        schema:
+          $ref: '#/definitions/models.ImageSql'
+      responses:
+        "200":
+          description: '{string} sql'
+        "403":
+          description: body is empty
+  /autosql/AutoPatient:
+    post:
+      tags:
+      - autosql
+      description: 根据json字段自动生成对表sql语句
+      operationId: AutoSqlController.Auto sql patient
+      parameters:
+      - in: body
+        name: body
+        description: 病人信息属性表
+        required: true
+        schema:
+          $ref: '#/definitions/models.PatientSql'
+      responses:
+        "200":
+          description: '{string} sql'
+        "403":
+          description: body is empty
+  /autosql/AutoReport:
+    post:
+      tags:
+      - autosql
+      description: 根据json字段自动生成对表sql语句
+      operationId: AutoSqlController.Auto sql report
+      parameters:
+      - in: body
+        name: body
+        description: 每个字段对应的字段名以及来源信息
+        required: true
+        schema:
+          $ref: '#/definitions/models.ReportSql'
+      responses:
+        "200":
+          description: '{string} sql'
+        "403":
+          description: body is empty
+  /autosql/AutoSeries:
+    post:
+      tags:
+      - autosql
+      description: 根据json字段自动生成对表sql语句
+      operationId: AutoSqlController.Auto sql series
+      parameters:
+      - in: body
+        name: body
+        description: 每个字段对应的字段名以及来源信息
+        required: true
+        schema:
+          $ref: '#/definitions/models.SeriesSql'
+      responses:
+        "200":
+          description: '{string} sql'
+        "403":
+          description: body is empty
+  /autosql/AutoStudy:
+    post:
+      tags:
+      - autosql
+      description: 根据json字段自动生成对表sql语句
+      operationId: AutoSqlController.Auto sql study
+      parameters:
+      - in: body
+        name: body
+        description: 每个字段对应的字段名以及来源信息
+        required: true
+        schema:
+          $ref: '#/definitions/models.StudySql'
+      responses:
+        "200":
+          description: '{string} sql'
+        "403":
+          description: body is empty
+  /consumer/:
+    get:
+      tags:
+      - consumer
+      description: 启动kafka消费者，根据病人信息获取医学影像数据存储
+      operationId: DownLoadController.Extract pacs
+      responses:
+        "200":
+          description: '{string} 开始执行pacs上传程序'
+        "403":
+          description: body is empty
+  /files/:
+    post:
+      tags:
+      - files
+      description: 反向上传pacs文件
+      operationId: FileUploadController.Auto sql study
+      parameters:
+      - in: body
+        name: body
+        description: 每个字段对应的字段名以及来源信息
+        required: true
+        schema:
+          $ref: '#/definitions/message.Data'
+      responses:
+        "200":
+          description: '{string} sql'
+        "403":
+          description: body is empty
+  /object/:
+    get:
+      tags:
+      - object
+      description: get all objects
+      operationId: ObjectController.GetAll
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.Object'
+        "403":
+          description: :objectId is empty
+    post:
+      tags:
+      - object
+      description: create object
+      operationId: ObjectController.Create
+      parameters:
+      - in: body
+        name: body
+        description: The object content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Object'
+      responses:
+        "200":
+          description: '{string} models.Object.Id'
+        "403":
+          description: body is empty
+  /object/{objectId}:
+    get:
+      tags:
+      - object
+      description: find object by objectid
+      operationId: ObjectController.Get
+      parameters:
+      - in: path
+        name: objectId
+        description: the objectid you want to get
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.Object'
+        "403":
+          description: :objectId is empty
+    put:
+      tags:
+      - object
+      description: update the object
+      operationId: ObjectController.Update
+      parameters:
+      - in: path
+        name: objectId
+        description: The objectid you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: The body
+        required: true
+        schema:
+          $ref: '#/definitions/models.Object'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.Object'
+        "403":
+          description: :objectId is empty
+    delete:
+      tags:
+      - object
+      description: delete the object
+      operationId: ObjectController.Delete
+      parameters:
+      - in: path
+        name: objectId
+        description: The objectId you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: objectId is empty
+  /producter/:
+    get:
+      tags:
+      - producter
+      description: 查询病人信息，上传数据至kafka待分析存储
+      operationId: ProducterController.Upload pacs
+      parameters:
+      - in: query
+        name: dbname
+        description: 上传医院数据库名
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} 开始执行pacs上传程序'
+        "403":
+          description: body is empty
+  /producter/dbtransform:
+    post:
+      tags:
+      - producter
+      description: 查询病人身份证信息
+      operationId: ProducterController.update sick id card
+      parameters:
+      - in: body
+        name: body
+        description: 输入存储病人身份证信息和sickid的表信息
+        required: true
+        schema:
+          $ref: '#/definitions/models.IDTrans'
+      responses:
+        "200":
+          description: '{string} 开始身份证更新程序'
+        "403":
+          description: body is empty
+  /test/:
+    get:
+      tags:
+      - test
+      description: get data
+      operationId: TestController.Get
+      responses:
+        "200":
+          description: '{string} test'
+        "403":
+          description: body is empty
+  /user/:
+    get:
+      tags:
+      - user
+      description: get all Users
+      operationId: UserController.GetAll
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.User'
+    post:
+      tags:
+      - user
+      description: create users
+      operationId: UserController.CreateUser
+      parameters:
+      - in: body
+        name: body
+        description: body for user content
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      responses:
+        "200":
+          description: '{int} models.User.Id'
+        "403":
+          description: body is empty
+  /user/{uid}:
+    get:
+      tags:
+      - user
+      description: get user by uid
+      operationId: UserController.Get
+      parameters:
+      - in: path
+        name: uid
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.User'
+        "403":
+          description: :uid is empty
+    put:
+      tags:
+      - user
+      description: update the user
+      operationId: UserController.Update
+      parameters:
+      - in: path
+        name: uid
+        description: The uid you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for user content
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/models.User'
+        "403":
+          description: :uid is not int
+    delete:
+      tags:
+      - user
+      description: delete the user
+      operationId: UserController.Delete
+      parameters:
+      - in: path
+        name: uid
+        description: The uid you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: uid is empty
+  /user/login:
+    get:
+      tags:
+      - user
+      description: Logs user into the system
+      operationId: UserController.Login
+      parameters:
+      - in: query
+        name: username
+        description: The username for login
+        required: true
+        type: string
+      - in: query
+        name: password
+        description: The password for login
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} login success'
+        "403":
+          description: user not exist
+  /user/logout:
+    get:
+      tags:
+      - user
+      description: Logs out current logged in user session
+      operationId: UserController.logout
+      responses:
+        "200":
+          description: '{string} logout success'
+  /utils/DelWeed:
+    get:
+      tags:
+      - utils
+      description: 删除weedfs文件
+      operationId: EsController.cache images to mysql
+      parameters:
+      - in: query
+        name: duns
+        description: 删除his_lis_pac中weedfs存储文件
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} start upload'
+        "403":
+          description: filepath is empty
+  /utils/Mysql2Redis:
+    get:
+      tags:
+      - utils
+      description: 将mysql中image数据缓存至redis
+      operationId: EsController.cache images to mysql
+      parameters:
+      - in: query
+        name: duns
+        description: 将mysql中的image数据缓存至redis
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} start upload'
+        "403":
+          description: filepath is empty
+  /utils/add/data:
+    get:
+      tags:
+      - utils
+      description: 新添加病人信息
+      operationId: EsController.load json file and save in es
+      parameters:
+      - in: query
+        name: jsonpath
+        description: 加载es备份的json文件
+        required: true
+        type: string
+      - in: query
+        name: copydir
+        description: 拷贝文件存储地址
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} succeed'
+        "403":
+          description: jsonpath is empty
+  /utils/essearch:
+    get:
+      tags:
+      - utils
+      description: 根据身份证号查找es数据库
+      operationId: EsController.serach in es
+      parameters:
+      - in: query
+        name: idcard
+        description: 返回病人影像数据
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/message.PrivateHits'
+        "403":
+          description: idcard is empty
+  /utils/read/json:
+    get:
+      tags:
+      - utils
+      description: 加载json文件
+      operationId: EsController.load json file
+      parameters:
+      - in: query
+        name: jsonpath
+        description: 加载es备份的json文件
+        required: true
+        type: string
+      - in: query
+        name: copydir
+        description: 拷贝文件存储地址
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} succeed'
+        "403":
+          description: jsonpath is empty
+  /utils/save/json:
+    get:
+      tags:
+      - utils
+      description: 加载json文件
+      operationId: EsController.load json file and save in es
+      parameters:
+      - in: query
+        name: jsonpath
+        description: 加载es备份的json文件
+        required: true
+        type: string
+      - in: query
+        name: copydir
+        description: 拷贝文件存储地址
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} succeed'
+        "403":
+          description: jsonpath is empty
+  /utils/upload:
+    get:
+      tags:
+      - utils
+      description: 上传文件到weedfs
+      operationId: EsController.upload files in weedfs
+      parameters:
+      - in: query
+        name: filepath
+        description: 上传文件到weedfs
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} start upload'
+        "403":
+          description: filepath is empty
+definitions:
+  message.Data:
+    title: Data
+    type: object
+    properties:
+      Dbname:
+        type: string
+      Path:
+        type: string
+  message.Image:
+    title: Image
+    type: object
+    properties:
+      dpath:
+        type: string
+      imagenum:
+        type: integer
+        format: int64
+      imgname:
+        type: string
+      size:
+        type: integer
+        format: int64
+      status:
+        type: boolean
+      type:
+        type: string
+      url:
+        type: string
+  message.Patient:
+    title: Patient
+    type: object
+    properties:
+      IDcard:
+        type: string
+      age:
+        type: integer
+        format: int64
+      birthday:
+        type: string
+        format: string
+      name:
+        type: string
+      namec:
+        type: string
+      patientid:
+        type: string
+      patientuid:
+        type: string
+      sex:
+        type: string
+  message.Private:
+    title: Private
+    type: object
+    properties:
+      duns:
+        type: string
+      orgname:
+        type: string
+      sickinfo:
+        $ref: '#/definitions/message.Patient'
+      source:
+        type: string
+      studys:
+        type: array
+        items:
+          $ref: '#/definitions/message.Study'
+  message.PrivateHits:
+    title: PrivateHits
+    type: object
+    properties:
+      Info:
+        type: array
+        items:
+          $ref: '#/definitions/message.Private'
+  message.Report:
+    title: Report
+    type: object
+    properties:
+      bodypart:
+        type: string
+      conclusion1:
+        type: string
+      conclusion2:
+        type: string
+      description1:
+        type: string
+      description2:
+        type: string
+      info1:
+        type: string
+      info2:
+        type: string
+      opinion:
+        type: string
+      report:
+        type: string
+      reportid:
+        type: string
+      reportlocate:
+        type: string
+      reporturl:
+        type: string
+      result:
+        type: string
+      resultlocate:
+        type: string
+      resulturl:
+        type: string
+  message.Series:
+    title: Series
+    type: object
+    properties:
+      bodypart:
+        type: string
+      count:
+        type: integer
+        format: int64
+      datetimex:
+        type: string
+        format: string
+      imgs:
+        type: array
+        items:
+          $ref: '#/definitions/message.Image'
+      modality:
+        type: string
+      seriesID:
+        type: string
+      seriesnum:
+        type: integer
+        format: int64
+  message.Study:
+    title: Study
+    type: object
+    properties:
+      accessionnumber:
+        type: string
+      bodypart:
+        type: string
+      clinical:
+        type: string
+      department:
+        type: string
+      devicename:
+        type: string
+      report:
+        $ref: '#/definitions/message.Report'
+      seriesinfo:
+        type: array
+        items:
+          $ref: '#/definitions/message.Series'
+      studyInstanceUID:
+        type: string
+      studytime:
+        type: string
+        format: string
+  models.IDTrans:
+    title: IDTrans
+    type: object
+    properties:
+      DbName:
+        type: string
+      ID_Card:
+        type: string
+      SickID:
+        type: string
+      TableName:
+        type: string
+  models.ImageSql:
+    title: ImageSql
+    type: object
+    properties:
+      Dpath:
+        type: string
+      Imagename:
+        type: string
+      Imagenum:
+        type: string
+      Seriesuid:
+        type: string
+      Source:
+        type: string
+      Typex:
+        type: string
+  models.Object:
+    title: Object
+    type: object
+    properties:
+      ObjectId:
+        type: string
+      PlayerName:
+        type: string
+      Score:
+        type: integer
+        format: int64
+  models.PatientSql:
+    title: PatientSql
+    type: object
+    properties:
+      Age:
+        type: string
+      Birthday:
+        type: string
+      Patientid:
+        type: string
+      Patientuid:
+        type: string
+      Sex:
+        type: string
+      Sickid:
+        type: string
+      Sickname:
+        type: string
+      Sicknamec:
+        type: string
+      Source:
+        type: string
+  models.Profile:
+    title: Profile
+    type: object
+    properties:
+      Address:
+        type: string
+      Age:
+        type: integer
+        format: int64
+      Email:
+        type: string
+      Gender:
+        type: string
+  models.ReportSql:
+    title: ReportSql
+    type: object
+    properties:
+      Conclusion1:
+        type: string
+      Conclusion2:
+        type: string
+      Description1:
+        type: string
+      Description2:
+        type: string
+      Info1:
+        type: string
+      Info2:
+        type: string
+      Opinion:
+        type: string
+      Part:
+        type: string
+      Report:
+        type: string
+      Reportlocate:
+        type: string
+      Reportname:
+        type: string
+      Result:
+        type: string
+      Resultlocate:
+        type: string
+      Resultname:
+        type: string
+      Source:
+        type: string
+      Studyid:
+        type: string
+  models.SeriesSql:
+    title: SeriesSql
+    type: object
+    properties:
+      Comx:
+        type: string
+      Exambodypart:
+        type: string
+      Imagecount:
+        type: string
+      Modality:
+        type: string
+      Seriesnumber:
+        type: string
+      Seriesuid:
+        type: string
+      Source:
+        type: string
+      Studydatetime:
+        type: string
+      Studyuid:
+        type: string
+  models.StudySql:
+    title: StudySql
+    type: object
+    properties:
+      Accessionnumber:
+        type: string
+      Bodypart:
+        type: string
+      Clinical:
+        type: string
+      Department:
+        type: string
+      Devicename:
+        type: string
+      Patientuid:
+        type: string
+      Reportid:
+        type: string
+      Source:
+        type: string
+      Studytime:
+        type: string
+      Studyuid:
+        type: string
+  models.User:
+    title: User
+    type: object
+    properties:
+      Id:
+        type: string
+      Password:
+        type: string
+      Profile:
+        $ref: '#/definitions/models.Profile'
+      Username:
+        type: string
+tags:
+- name: object
+  description: |
+    Operations about object
+- name: user
+  description: |
+    Operations about Users
+- name: test
+  description: |
+    Operations about test
+- name: producter
+  description: |
+    Operations about logs
+- name: consumer
+  description: |
+    Operations about logs

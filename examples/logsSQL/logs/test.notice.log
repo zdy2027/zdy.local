@@ -1,0 +1,5 @@
+2017/05/20 10:28:18 [N] notice test
+2017/05/20 10:33:43 [N] notice test
+2017/05/20 10:34:42 [N] [testing.go:657] notice test
+2017/05/20 10:35:26 [N] [asm_amd64.s:2197] notice test
+2017/05/20 10:35:37 [N] [logs_test.go:20] notice test

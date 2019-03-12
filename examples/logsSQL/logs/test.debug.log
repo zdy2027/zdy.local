@@ -1,0 +1,7 @@
+2017/05/20 10:28:18 [D] debug test
+2017/05/20 10:28:18 [D] trace test
+2017/05/20 10:33:43 [D] debug test
+2017/05/20 10:34:42 [D] [testing.go:657] debug test
+2017/05/20 10:35:26 [D] [asm_amd64.s:2197] debug test
+2017/05/20 10:35:37 [D] [logs_test.go:15] debug test
+2017/05/20 10:42:19 [D] [logs_test.go:15] debug test

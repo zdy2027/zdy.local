@@ -1,0 +1,6 @@
+2017/05/20 10:28:18 [W] warn test
+2017/05/20 10:28:18 [W] warning test
+2017/05/20 10:33:43 [W] warning test
+2017/05/20 10:34:42 [W] [testing.go:657] warning test
+2017/05/20 10:35:26 [W] [asm_amd64.s:2197] warning test
+2017/05/20 10:35:37 [W] [logs_test.go:22] warning test

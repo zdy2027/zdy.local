@@ -1,0 +1,3 @@
+2017/07/18 10:26:54 [E] [fileOP.go:16] INPUT PATH ERROR%!(EXTRA string=stat : no such file or directory)
+2017/07/18 10:27:23 [E] [fileOP.go:16] INPUT PATH ERROR%!(EXTRA string=stat : no such file or directory)
+2017/07/18 10:27:47 [E] [fileOP.go:16] INPUT PATH ERROR%!(EXTRA string=stat : no such file or directory)

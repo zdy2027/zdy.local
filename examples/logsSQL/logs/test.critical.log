@@ -1,0 +1,6 @@
+2017/05/20 10:28:18 [C] critical test
+2017/05/20 10:33:43 [C] critical test
+2017/05/20 10:34:42 [C] [testing.go:657] critical test
+2017/05/20 10:35:26 [C] [asm_amd64.s:2197] critical test
+2017/05/20 10:35:37 [C] [logs_test.go:16] critical test
+2017/05/20 10:42:19 [C] [logs_test.go:16] critical test

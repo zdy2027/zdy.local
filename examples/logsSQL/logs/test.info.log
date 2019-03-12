@@ -1,0 +1,7 @@
+2017/05/20 10:28:18 [I] info test
+2017/05/20 10:28:18 [I] information test
+2017/05/20 10:33:43 [I] info test
+2017/05/20 10:34:42 [I] [testing.go:657] info test
+2017/05/20 10:35:26 [I] [asm_amd64.s:2197] info test
+2017/05/20 10:35:37 [I] [logs_test.go:12] info test
+2017/05/20 10:42:19 [I] [logs_test.go:12] info test

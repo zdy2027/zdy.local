@@ -1,0 +1,7 @@
+2017/07/18 10:24:58 [I] [upload.go:38] test/test1.txt%!(EXTRA string=3,01b79a9893)
+2017/07/18 10:24:58 [D] [upload.go:43] UPLOAD SUCCEED %!(EXTRA string=3,01b79a9893)
+2017/07/18 10:26:54 [E] [fileOP.go:16] INPUT PATH ERROR%!(EXTRA string=stat : no such file or directory)
+2017/07/18 10:27:23 [E] [fileOP.go:16] INPUT PATH ERROR%!(EXTRA string=stat : no such file or directory)
+2017/07/18 10:27:47 [E] [fileOP.go:16] INPUT PATH ERROR%!(EXTRA string=stat : no such file or directory)
+2017/07/18 10:28:17 [I] [upload.go:38] test/test1.txt%!(EXTRA string=5,02a7250657)
+2017/07/18 10:28:17 [D] [upload.go:43] UPLOAD SUCCEED %!(EXTRA string=5,02a7250657)
